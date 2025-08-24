@@ -20,7 +20,7 @@ function App() {
 	const [attempts, setAttempts] = useState(0)
 
 	function handleRestart() {
-		alert("Reiniciar o jogo!")
+		startGame()
 	}
 
 	function handleDifficulty(difficulty: "easy" | "normal" | "hard") {
@@ -60,6 +60,7 @@ function App() {
 		)
 
 		if (exists) {
+      setLetter("")
 			return alert("Voce ja utilizou a letra " + value)
 		}
 
@@ -79,6 +80,29 @@ function App() {
 	useEffect(() => {
 		startGame()
 	}, [])
+
+	function endGame(message: string) {
+		alert(message)
+		startGame()
+	}
+
+	useEffect(() => {
+		if (!challenge) {
+			return
+		}
+
+		setTimeout(() => {
+			if (score === challenge.word.length) {
+				return endGame("Parabens vc descobriu a palavra!")
+			}
+
+			const attemptLimit = challenge.word.length + attempts
+
+			if (lettersUsed.length === attemptLimit) {
+				return endGame("Que pena, voce usou todas as tentativas!")
+			}
+		}, 200)
+	}, [score, lettersUsed.length])
 
 	if (!challenge) {
 		return
