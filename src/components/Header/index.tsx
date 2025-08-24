@@ -16,7 +16,7 @@ export function Header({ current, max, onRestart }: Props) {
 
       <div className={styles.tries}>
         <span>
-          <strong>{current}</strong> de {max} tentativas
+          <strong>{current}</strong> de {max} erros
         </span>
 
         <button type="button" onClick={onRestart}>

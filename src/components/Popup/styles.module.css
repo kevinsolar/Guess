@@ -1,0 +1,38 @@
+.popup {
+	position: absolute;
+	inset: 0;
+
+	background-color: rgba(0, 0, 0, 0.45);
+
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& .popupContainer {
+		max-width: 500px;
+		width: 92.5%;
+		max-height: 440px;
+		height: 90%;
+
+		background-color: white;
+
+		border-radius: 0.75rem;
+
+		padding: 1rem;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		gap: 2rem;
+
+		& .difficultyContainer {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+}
