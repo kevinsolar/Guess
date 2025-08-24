@@ -17,8 +17,22 @@ function App() {
 	const [lettersUsed, setLettersUsed] = useState<LettersUsedProps[]>([])
 	const [challenge, setChallenge] = useState<Challenge | null>(null)
 
+	const [attempts, setAttempts] = useState(0)
+
 	function handleRestart() {
 		alert("Reiniciar o jogo!")
+	}
+
+	function handleDifficulty(difficulty: "easy" | "normal" | "hard") {
+		if (difficulty === "easy") {
+			setAttempts(4)
+		}
+		if (difficulty === "normal") {
+			setAttempts(2)
+		}
+		if (difficulty === "hard") {
+			setAttempts(1)
+		}
 	}
 
 	function startGame() {
@@ -72,12 +86,36 @@ function App() {
 
 	return (
 		<main className={styles.container}>
-			<Header current={score} max={10} onRestart={handleRestart} />
+			<Header
+				current={lettersUsed.length}
+				max={challenge.word.length + attempts}
+				onRestart={handleRestart}
+			/>
+
+			{attempts === 0 && (
+				<section id="popup" className={styles.popup}>
+					<div className={styles.popupContainer}>
+						<h1>Selecione a dificuldade:</h1>
+						<div className={styles.difficultyContainer}>
+							<Button title="Facil" onClick={() => handleDifficulty("easy")} />
+							<Button
+								title="Normal"
+								onClick={() => handleDifficulty("normal")}
+							/>
+							<Button
+								title="Dificil"
+								onClick={() => handleDifficulty("hard")}
+							/>
+						</div>
+					</div>
+				</section>
+			)}
+
 			<section id="top">
 				<Tip tip={challenge.tip} />
 
 				<div className={styles.word}>
-          {/* Renderiza cada quadradinho de acrodo com a quantidade de letras da palavra selecionada */}
+					{/* Renderiza cada quadradinho de acrodo com a quantidade de letras da palavra selecionada */}
 					{challenge.word.split("").map((letter, index) => {
 						const letterUsed = lettersUsed.find(
 							(used) => used.value.toUpperCase() === letter.toUpperCase()
