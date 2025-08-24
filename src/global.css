@@ -1,0 +1,45 @@
+:root {
+	font-size: 16px;
+	--font-default: "Noto Sans", sans-serif;
+
+	--bg-light: #f5f5f5;
+
+	--purple: #4f4fb9;
+	--light-purple: #6363db;
+	--bg-purple: #ebebfc;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--bg-light);
+
+	font-family: var(--font-default);
+}
+
+input,
+button {
+	font-family: var(--font-default);
+}
+
+button {
+	cursor: pointer;
+	transition: filter 0.2s;
+
+	&:hover {
+		filter: brightness(0.9);
+	}
+}
+
+#root {
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
