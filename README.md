@@ -89,26 +89,12 @@
 - ✅ Feedback visual para letras usadas
 - ✅ Animações suaves
 
-## 🤝 Contribuição
-
-Contribuições são sempre bem-vindas! Para contribuir:
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👨‍💻 Autor
-
-Desenvolvido com ❤️ durante o curso da **Rocketseat**
-
 ---
 
-<div align="center">
-  <p>⭐ Se este projeto te ajudou, deixe uma estrela!</p>
-</div>
+## 👨‍💻 Autor Kevin Solar
+
+Desenvolvido com ❤️ durante o curso da **Rocketseat**
